@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Report Garbage | ECO Plus</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">
+    ECO Plus
+</div>
+
+<ul>
+    <li>
+        <a href="index.html">Home</a>
+    </li>
+</ul>
+
+</nav>
+
+<div class="form-container">
+<h1>🗑 Report Garbage</h1>
+
+<form>
+
+    <label>Your Name</label>
+
+    <input
+        type="text"
+        id="name"
+        placeholder="Enter Your Name"
+        required>
+
+    <label>Contact Number</label>
+
+    <input
+        type="tel"
+        id="phone"
+        placeholder="Enter Mobile Number"
+        maxlength="10"
+        required>
+    <label>Email Address (Optional)</label>
+
+<input
+type="email"
+id="email"
+placeholder="Enter Email Address">
+
+    <label>Location</label>
+
+    <input
+        type="text"
+        id="location"
+        placeholder="Click Button To Get Location"
+        readonly>
+
+    <button
+        type="button"
+        onclick="getLocation()">
+
+        📍 Get My Location
+
+    </button>
+
+    <p id="status"></p>
+
+    <label>District / Panchayet</label>
+
+    <input
+        type="text"
+        id="district"
+        placeholder="Enter District / Panchayet">
+
+    <label>Ward Number</label>
+
+    <input
+        type="text"
+        id="ward"
+        placeholder="Enter Ward Number">
+
+    <label>Select Authority</label>
+
+    <select id="authority">
+
+        <option value="Municipality">Municipality</option>
+        <option value="School">School</option>
+        <option value="College">College</option>
+        <option value="Railway">Railway</option>
+        <option value="Hospital">Hospital</option>
+
+    </select>
+
+    <label>Upload Garbage Photo</label>
+
+    <input
+        type="file"
+        id="photoInput"
+        accept="image/*"
+        onchange="previewImage(event)">
+
+    <br>
+
+    <img
+        id="preview"
+        width="250"
+        style="display:none;border-radius:10px;">
+
+    <br><br>
+
+    <button
+        type="button"
+        onclick="removeImage()">
+
+        ❌ Remove Image
+
+    </button>
+
+    <br><br>
+
+    <label>Description</label>
+
+    <textarea
+        id="description"
+        placeholder="Describe the garbage problem..."></textarea>
+
+    <br>
+
+    <button
+        type="button"
+        onclick="saveComplaint()">
+
+        🗑 Submit Garbage Report
+
+    </button>
+
+</form>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+(function(){
+emailjs.init({
+publicKey: "vfDMWo65SU0WsoANL",
+});
+})();
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>
